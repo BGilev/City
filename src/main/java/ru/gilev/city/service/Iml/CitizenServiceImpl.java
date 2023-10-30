@@ -1,5 +1,6 @@
 package ru.gilev.city.service.Iml;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.gilev.city.entity.Citizen;
@@ -14,14 +15,11 @@ import java.util.List;
 import static org.springframework.beans.BeanUtils.copyProperties;
 
 @Service
+@RequiredArgsConstructor
 public class CitizenServiceImpl implements CitizenService {
 
     private final CitizenRepository citizenRepository;
 
-    @Autowired
-    public CitizenServiceImpl(CitizenRepository citizenRepository) {
-        this.citizenRepository = citizenRepository;
-    }
 
     @Override
     public CitizenResponse getCitizensById(long id) {
