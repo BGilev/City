@@ -1,9 +1,8 @@
 package ru.gilev.city.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "passport")
@@ -22,8 +21,5 @@ public class Passport {
 
     @OneToOne(mappedBy = "passport")
     private Citizen citizen;
-
-
-
 
 }

@@ -1,7 +1,7 @@
 package ru.gilev.city.entity;
-
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "car")
