@@ -1,5 +1,6 @@
 package ru.gilev.city.entity;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
