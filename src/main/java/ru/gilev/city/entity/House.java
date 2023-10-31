@@ -1,12 +1,12 @@
 package ru.gilev.city.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "house")
@@ -16,14 +16,17 @@ import java.util.Set;
 @Getter
 @Setter
 public class House {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "house_numder",nullable = false)
     private String number;
+    @Column(name = "house_street",nullable = false)
+    private String street;
 
 
-    @ManyToMany(mappedBy = "houseSet")
-    private List<Citizen> citizenSet = new ArrayList<>();
+    @ManyToMany(mappedBy = "houseList")
+    private List<Citizen> citizenList = new ArrayList<>();
 }

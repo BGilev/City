@@ -1,9 +1,7 @@
 package ru.gilev.city.entity;
-
-
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,7 +17,6 @@ import java.util.Set;
 @Setter
 @ToString
 public class Citizen {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,10 +38,8 @@ public class Citizen {
             joinColumns = {@JoinColumn(name = "citizen_id",referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "house_id",referencedColumnName = "id")}
     )
-    private List<House> houseSet = new ArrayList<>();
+    private List<House> houseList = new ArrayList<>();
 
     @OneToMany(mappedBy = "citizen")
     private List<Car> carList = new ArrayList<>();
-
-
 }
