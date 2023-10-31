@@ -1,5 +1,6 @@
 package ru.gilev.city.entity;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Citizen {
 
     @OneToOne
     @JoinColumn(name = "passport_id",referencedColumnName = "id")
+    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     private Passport passport;
 
     @ManyToMany
@@ -41,5 +43,6 @@ public class Citizen {
     private List<House> houseList = new ArrayList<>();
 
     @OneToMany(mappedBy = "citizen")
+    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     private List<Car> carList = new ArrayList<>();
 }
