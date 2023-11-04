@@ -19,7 +19,7 @@ public class CitizenDto {
     private long id;
     private String name;
     private String surname;
-    private Passport passport;
+    private Passport passport; // will be generated in service
     private List<House> houseList;
     private List<Car> carList;
 }
