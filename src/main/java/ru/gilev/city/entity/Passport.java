@@ -19,7 +19,7 @@ public class Passport {
     @Column(name = "passport_number", unique = true, nullable = false)
     private String number;
 
-    @OneToOne(mappedBy = "passport")
-    private Citizen citizen;
+//    @OneToOne(mappedBy = "passport")
+//    private Citizen citizen;
 
 }

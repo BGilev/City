@@ -19,6 +19,10 @@ import java.util.Set;
 @ToString
 public class Citizen {
 
+//    * У всех жителей города есть паспорт.
+//    * Жители города могут владеть одним/несколькими домами или не владеть вообще. У дома может быть один/несколько хозяев или не быть вообще.
+//    * У жителя города может быть одна/несколько машин или не быть вообще, но у машины может быть ровно один хозяин.
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -30,8 +34,8 @@ public class Citizen {
     private String surname;
 
     @OneToOne
-    @JoinColumn(name = "passport_id",referencedColumnName = "id")
-    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
+//    @JoinColumn(name = "passport_id",referencedColumnName = "id")
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private Passport passport;
 
     @ManyToMany
@@ -43,6 +47,6 @@ public class Citizen {
     private List<House> houseList = new ArrayList<>();
 
     @OneToMany(mappedBy = "citizen")
-    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private List<Car> carList = new ArrayList<>();
 }
